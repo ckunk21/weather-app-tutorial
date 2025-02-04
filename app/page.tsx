@@ -6,8 +6,47 @@ import Current from "./component/current";
 import WeekForecast from "./component/weekforecast";
 import WeatherDetails from "./component/weatherdetails";
 
+
+
+
 const Home = () => {
-  const [data, setData] = useState({})
+  const [data, setData] = useState({
+    current: {
+      condition: {
+        icon: "",
+        text: "",
+      },
+      wind_mph: 0,
+      humidity: 0,
+      wind_dir: "",
+      pressure_mb: 0,
+      feelslike_f: 0,
+      vis_km: 0,
+      temp_f: 0,
+    },
+    location: {
+      name: "",
+      region: "",
+    },
+    forecast: {
+      forecastday: [{
+        date: "",
+        day: {
+          condition: {
+            icon: "",
+            text: "",
+          },
+          maxtemp_f: 0,
+          mintemp_f: 0,
+        },
+        astro: {
+          sunrise: "",
+          sunset: "",
+        },
+      }],
+    },
+  })
+
   const [location, setLocation] = useState("")
   const [error, setError] = useState("")
 
@@ -27,7 +66,42 @@ const Home = () => {
         setError("")
       } catch{
         setError("City not found")
-        setData({})
+        setData({
+          current: {
+            condition: {
+              icon: "",
+              text: "",
+            },
+            wind_mph: 0,
+            humidity: 0,
+            wind_dir: "",
+            pressure_mb: 0,
+            feelslike_f: 0,
+            vis_km: 0,
+            temp_f: 0,
+          },
+          location: {
+            name: "",
+            region: "",
+          },
+          forecast: {
+            forecastday: [{
+              date: "",
+              day: {
+                condition: {
+                  icon: "",
+                  text: "",
+                },
+                maxtemp_f: 0,
+                mintemp_f: 0,
+              },
+              astro: {
+                sunrise: "",
+                sunset: "",
+              },
+            }],
+          },
+        })
       }
     }
   }
@@ -52,7 +126,7 @@ const Home = () => {
       <>
       <div className="flex md:flex-row flex-col p-12 items-center justify-between">
         <Current data={data}/>
-        <WeekForecast data = {data}/>
+        <WeekForecast data= {data}/>
       </div>
       <div>
         <WeatherDetails data = {data}/>
