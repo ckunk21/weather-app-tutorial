@@ -64,7 +64,7 @@ const Home = () => {
         }
         const data = await response.json()
         setData(data)
-        setLocation(location)
+        setLocation("")
         setError("")
       } catch{
         setError("City not found")
@@ -117,7 +117,7 @@ const Home = () => {
       </div>
     )
   } 
-  else if (error != ""){
+  else if (error == "City not found"){
     content= (
     <div className="text-white text-center h-screen mt-[5rem]">
       <p className="text-3xl font-bold mb-4">City Not Found</p>
