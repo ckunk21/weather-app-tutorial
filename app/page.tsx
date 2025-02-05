@@ -64,7 +64,7 @@ const Home = () => {
         }
         const data = await response.json()
         setData(data)
-        setLocation("")
+        setLocation(location)
         setError("")
       } catch{
         setError("City not found")
