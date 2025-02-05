@@ -122,6 +122,7 @@ const Home = () => {
     <div className="text-white text-center h-screen mt-[5rem]">
       <p className="text-3xl font-bold mb-4">City Not Found</p>
       <p className="text-xl">Enter a valid City</p>
+      <Current data={data} />
     </div>
 )
 } else {
