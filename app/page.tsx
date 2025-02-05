@@ -50,8 +50,9 @@ const Home = () => {
 
   const [location, setLocation] = useState("")
   const [error, setError] = useState("")
+  const key = process.env.NEXT_PUBLIC_APP_API_KEY
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_APP_API_KEY}&q=${location}&days=7&aqi=yes&alerts=yes`
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=7&aqi=yes&alerts=yes`
   
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if(e.key == "Enter"){
