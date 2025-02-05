@@ -51,6 +51,7 @@ const Home = () => {
   const [location, setLocation] = useState("")
   const [error, setError] = useState("")
   const key = process.env.NEXT_PUBLIC_APP_API_KEY
+  
 
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=7&aqi=yes&alerts=yes`
   
