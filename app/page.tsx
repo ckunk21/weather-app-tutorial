@@ -51,7 +51,7 @@ const Home = () => {
   const [location, setLocation] = useState("")
   const [error, setError] = useState("")
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=804990cee6d849efbf1184002253101&q=${location}&days=7&aqi=yes&alerts=yes`
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_APP_API_KEY}&q=${location}&days=7&aqi=yes&alerts=yes`
   
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if(e.key == "Enter"){
@@ -115,7 +115,6 @@ const Home = () => {
         <p className="text-xl">Enter a city name to get a weather forecast</p>
       </div>
     )
-  {/* 
   } else if (error !== ""){
     content= (
       <div className="text-white text-center h-screen mt-[5rem]">
@@ -123,7 +122,6 @@ const Home = () => {
         <p className="text-xl">Enter a valid City</p>
       </div>
     )
-    */}
   } else {
     content = (
       <>
