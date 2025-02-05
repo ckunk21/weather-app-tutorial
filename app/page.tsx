@@ -9,6 +9,7 @@ import WeatherDetails from "./component/weatherdetails";
 
 
 
+
 const Home = () => {
   const [data, setData] = useState({
     current: {
@@ -62,7 +63,7 @@ const Home = () => {
         }
         const data = await response.json()
         setData(data)
-        setLocation("")
+        setLocation(location)
         setError("")
       } catch{
         setError("City not found")
