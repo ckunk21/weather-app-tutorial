@@ -23,7 +23,7 @@ const Home = () => {
       pressure_mb: 0,
       feelslike_f: 0,
       vis_km: 0,
-      temp_f: 0,
+      temp_f: 1,
     },
     location: {
       name: "",
@@ -47,6 +47,7 @@ const Home = () => {
       }],
     },
   })
+    
 
   const [location, setLocation] = useState("")
   const [error, setError] = useState("")
